@@ -19,13 +19,14 @@ import androidx.compose.ui.unit.dp
 fun WellnessTaskItem(
     taskName: String,
     modifier: Modifier = Modifier,
+    onClose: () -> Unit,
 ) {
     var checkedState by rememberSaveable { mutableStateOf(false) }
 
     WellnessTaskItem(
         taskName = taskName,
         checked = checkedState,
-        onClose = {},
+        onClose = onClose,
         onCheckedChange = { newValue ->
             checkedState = newValue
         },
